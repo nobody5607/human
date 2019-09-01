@@ -12,6 +12,9 @@ $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'
         <br/>
         <div class="row">
             <div class="col-md-9">
+                <div>
+                    <?= $this->render("_search"); ?>
+                </div>
                 <div class="kt-portlet">
                     <div class="kt-portlet__head kt-portlet__head--right kt-portlet__head--noborder  kt-ribbon kt-ribbon--clip kt-ribbon--left kt-ribbon--info">
                         <h4 class="kt-ribbon__target" style="top: 12px;background:#056da6;font-weight:bold;"><img src="/img/news.png" style="width: 25px;"> ข่าวประกาศ</h4>
