@@ -32,7 +32,7 @@ $user_id = \backend\classes\CNUser::get_user_id();
                             <div>
                                 <h4><?= isset($v->title) ? $v->title : '' ?></h4>
                                 <div>
-                                    <span><i class="glyphicon glyphicon-calendar"></i> วันที่เผยแพร่ :  <?= appxq\sdii\utils\SDdate::mysql2phpThDateTimeFull($v->create_date) ?></span>&nbsp;&nbsp;
+                                    <span><i class="glyphicon glyphicon-calendar"></i> วันที่เผยแพร่ :  <?= appxq\sdii\utils\SDdate::mysql2phpDate($v->create_date) ?></span>&nbsp;&nbsp;
                                     <span><i class="glyphicon glyphicon-user"></i> โดย : <?= \backend\classes\CNUser::get_fullname_by_user_id($user_id) ?></span>
                                 </div>
 

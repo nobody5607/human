@@ -22,7 +22,7 @@ $user_id = \backend\classes\CNUser::get_user_id();
             <div>
                 <h4><?= isset($model->title) ? $model->title : '' ?></h4>
                 <div>
-                    <span><i class="glyphicon glyphicon-calendar"></i> วันที่เผยแพร่ :  <?= isset($model->create_date)?appxq\sdii\utils\SDdate::mysql2phpThDateTimeFull($model->create_date):'' ?></span>&nbsp;&nbsp;
+                    <span><i class="glyphicon glyphicon-calendar"></i> วันที่เผยแพร่ :  <?= isset($model->create_date)?appxq\sdii\utils\SDdate::mysql2phpThDate($model->create_date):'' ?></span>&nbsp;&nbsp;
                     <span><i class="glyphicon glyphicon-user"></i> โดย : <?= isset($user_id)?\backend\classes\CNUser::get_fullname_by_user_id($user_id):'' ?></span>
                     <span class="pull-right">
                         <a href="<?= \yii\helpers\Url::to(["/events/update?id={$model->id}"]) ?>" ><i class="glyphicon glyphicon-pencil"></i> แก้ไข</a> |

@@ -70,7 +70,7 @@ $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'
 
                                 ?>
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     
                                         <div class="col-md-3 col-sm-3 col-xs-12"> 
                                             <img src="<?= "{$url}/files/{$v->file}"; ?>" style="    border-radius: 3px; max-width: 75px;">

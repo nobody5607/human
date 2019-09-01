@@ -49,14 +49,15 @@ AppAsset::register($this);
     } else {
 //        $menuItems[] = ['label' => 'ลงทะเบียนเข้าร่วมกิจกรรม', 'url' => ['/site/register-form']];
         $menuItems[] = ['label' => "<img src='".yii\helpers\Url::to(['@web/img/form.png'])."' style='width: 25px;'>  แบบประเมินผลออนไลน์", 'url' => ['/site/assessment-form']];
+        $menuItems[] = ['label' => "<img src='".yii\helpers\Url::to(['@web/img/form.png'])."' style='width: 25px;'>  รายงาน", 'url' => ['/report/index']];
         $menuItems[] =  [
                 'label' => 'ข้อมูลส่วนตัว',
                 'visible' => isset(\Yii::$app->session['user_id']) ? true : false,
                 'icon' => 'user',
                 'url' => '#',
                 'items' => [
-                    ['label' => 'ข้อมูลส่วนตัว', 'url' => ['/site/event']],
-                    ['label' => 'ออกจากระบบ', 'url' => ['/site/event']],
+                    ['label' => 'ข้อมูลส่วนตัว', 'url' => ['/setting/profile']],
+                    ['label' => 'ออกจากระบบ', 'url' => ['/site/logout']],
                 ],
         ];
     }
