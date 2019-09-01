@@ -32,7 +32,7 @@ class Advertisement extends \yii\db\ActiveRecord
             [['title', 'detail'], 'required'],
             [['detail'], 'string'],
             [['create_by'], 'integer'],
-            [['create_date','photo'], 'safe'],
+            [['create_date','photo','sub_detail'], 'safe'],
             [['title'], 'string', 'max' => 255],
         ];
     }
@@ -48,7 +48,8 @@ class Advertisement extends \yii\db\ActiveRecord
             'detail' => 'รายละเอียดประชาสัมพันธ์',
             'create_by' => 'สร้างโดย',
             'create_date' => 'สร้างวันที่',
-            'photo'=>'รูปภาพข่าว'
+            'photo'=>'รูปภาพข่าว',
+            'sub_detail'=>'เนื้อหาขนาดย่อ'
         ];
     }
 }

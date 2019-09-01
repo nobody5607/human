@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>function($model){
                     if ($model->photo) {
                         $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'] : '';
+                        //appxq\sdii\utils\VarDumper::dump(\Yii::$app->params);
                         return Html::img("{$url}/files/{$model->photo}", [
                             'class' => 'img img-responsive',
                             'style'=>'width:50px;margin:0 auto;'

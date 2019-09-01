@@ -110,7 +110,8 @@ class AdvertisementController extends Controller
             $model->create_date = date('Y-m-d H:i:s');
             
             $file = \yii\web\UploadedFile::getInstance($model, 'photo');
-            if($file){
+             
+            if(isset($file)){
                 $path = \Yii::getAlias('@storage') . '/web/files';
                 if(\Yii::$app->session['file'] != ''){
                     $file_name = \Yii::$app->session['user_image'];
@@ -124,9 +125,9 @@ class AdvertisementController extends Controller
             }
             
             if($model->save()){
-                \Yii::$app->session->setFlash('success', "แก้ไขข่าวประชาสัมพันธ์ {$model->title} สำเร็จ");
-                return $this->redirect(['index']);
-        }
+                    \Yii::$app->session->setFlash('success', "แก้ไขข่าวประชาสัมพันธ์ {$model->title} สำเร็จ");
+                    return $this->redirect(['index']);
+            }
 
         }
 

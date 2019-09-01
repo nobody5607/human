@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= $form->field($model, 'password')->passwordInput() ?>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
+                                <div class="col-md-12">
                                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-lg btn-block', 'name' => 'login-button']) ?>
                                     <br/><a href="<?= yii\helpers\Url::to(['/site/signup'])?>">สมัครสมาชิก</a>
                                 </div>

@@ -8,8 +8,8 @@
         if ($model->photo) {
             $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'] : '';
             echo Html::img("{$url}/files/{$model->photo}", [
-                        'class' => 'img img-responsive img-rounded',
-                        'style' => 'width:100px;'
+                        'class' => 'img img-responsive',
+                        'style' => ''
             ]);
         }
     ?>
@@ -17,8 +17,9 @@
 <div class="col-md-10">
     <div><?= $model->title; ?></div>
     <div>
-        <span><i class="glyphicon glyphicon-calendar"></i> วันที่เผยแพร่ : <?= appxq\sdii\utils\SDdate::mysql2phpThDateTime($model->create_date)?></span>
-        <span><i class="glyphicon glyphicon-user"></i> โดย : <?= backend\classes\CNUser::get_fullname_by_user_id($model->create_by)?></span>
+        <span>โดย : <?= backend\classes\CNUser::get_fullname_by_user_id($model->create_by)?></span>
+        <span> วันที่เผยแพร่ : <?= appxq\sdii\utils\SDdate::mysql2phpThDateTime($model->create_date)?></span>
+        
     </div>
     <div>
        <a href="<?= Url::to(['/site/news-detail?id='.$model->id])?>"> อ่านเพิ่มเติม</a>

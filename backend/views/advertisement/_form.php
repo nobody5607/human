@@ -23,6 +23,7 @@ use yii\widgets\ActiveForm;
     ?>
     <?= $form->field($model, 'photo')->fileInput() ?>
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'sub_detail')->textarea(); ?>
 
     <?= $form->field($model, 'detail')->widget(dosamigos\ckeditor\CKEditor::className(), [
                     'options' => ['rows' => 6],

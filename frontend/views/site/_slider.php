@@ -22,7 +22,7 @@
                 <?php else: ?>      
                     <div class="item">
                     <?php endif; ?>
-                    	<a href='<?= \yii\helpers\Url::to([$v['url']])?>' target='_BLANK'> <img src="<?= "{$url}/files/{$v->photo}"; ?>" alt="..."></a>
+                    <a href='<?= \yii\helpers\Url::to([$v['url']]) ?>' target='_BLANK'> <img src="<?= "{$url}/files/{$v->photo}"; ?>" alt="..."></a>
                     <div class="carousel-caption">
 
                     </div>
@@ -42,4 +42,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <br/>
+</div>

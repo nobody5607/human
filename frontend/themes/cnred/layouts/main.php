@@ -19,7 +19,7 @@ $actionID = isset(Yii::$app->controller->action->id) ? Yii::$app->controller->ac
 
 \frontend\components\AppComponent::navbarHeaderLeftMenu($moduleID, $controllerID, $actionID);
 \frontend\components\AppComponent::navbarHeaderRightMenu($moduleID, $controllerID, $actionID);
-$baseUrl = $this->theme->baseUrl;;
+$baseUrl = $this->theme->baseUrl; 
 
 ?>
 
@@ -36,6 +36,7 @@ $baseUrl = $this->theme->baseUrl;;
         <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
         
         <?php $this->head() ?>
+        <link href="<?= $baseUrl; ?>/css/themes.css" rel="stylesheet">
         <link href="<?= $baseUrl; ?>/css/style.css" rel="stylesheet">
     </head>
     <body class="common-home ltr layout-1 pattern-6">
@@ -69,50 +70,7 @@ $baseUrl = $this->theme->baseUrl;;
                         </div>
                     </div>
                 </div>
-                <div class="header-middle">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-2 col-xs-3">
-                                <div class="header-logo">
-                                    <a href="<?= yii\helpers\Url::to(['/'])?>">
-                                        <?php 
-                                            $imagePath = isset(Yii::$app->params['storageUrl']) ? Yii::$app->params['storageUrl'] : '';
-                                            $image = "{$imagePath}/images/store.png";
-                                            $image = isset(\Yii::$app->params['logo']) ? \Yii::$app->params['logo'] : '';
-                                        ?>
-                                        <img src="<?= $imagePath;?>/images/book.png" alt="" id="img-logo" />
-                                    </a>
-                                </div>
-                            </div>  
-                            <div class="col-sm-8 col-xs-6">
-                                <?= $this->render('_search')?>
-                            </div>
-                            
-                            <!-- Mobile Menu Start -->
-                            <div class="mobile-menu-area">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="mobile-menu">
-                                                <nav id="dropdown">
-                                                    
-                                                   <?php
-                                                        echo yii\widgets\Menu::widget([
-                                                            'items' => isset(\Yii::$app->params['navbar-header-left']) ? \Yii::$app->params['navbar-header-left'] : [],
-                                                            'options' => ['class' => 'cnmenu'],
-                                                            'encodeLabels' => false,
-                                                        ]);
-                                                    ?>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>		
-                            <!-- Mobile Menu End -->
-                        </div>
-                    </div>
-                </div>
+              
                 
             </header>
             <!-- Header Area End -->

@@ -13,13 +13,13 @@ return [
     'bootstrap' => ['log','frontend\components\AppComponent'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                   '@frontend/views' => '@frontend/themes/cnred'
-                ],
-            ],
-       ],
+//        'view' => [
+//            'theme' => [
+//                'pathMap' => [
+//                   '@frontend/views' => '@frontend/themes/cnred'
+//                ],
+//            ],
+//       ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],

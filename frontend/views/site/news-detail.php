@@ -3,7 +3,7 @@
 ?>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
         <div>
             <a class="" href="<?= \yii\helpers\Url::to(['/site/news'])?>"><i class="glyphicon glyphicon-arrow-left"></i> ย้อนกลับ</a>
         </div>

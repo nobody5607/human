@@ -41,19 +41,29 @@ class AppComponent extends Component {
             
         }
         $navbar = \Yii::$app->params['navbar-header-right'] = [
-            ['label' => "<img src='".yii\helpers\Url::to(['@web/img/home.png'])."' style='width: 25px;'> หน้าหลัก", 'url' => ['/site/index']],
+//            ['label' => "<img src='".yii\helpers\Url::to(['@web/img/home.png'])."' style='width: 25px;'> หน้าหลัก", 'url' => ['/site/index']],
             ['label' => "<img src='".yii\helpers\Url::to(['@web/img/event.png'])."' style='width: 25px;'> กิจกรรมการบรรยาย", 'url' => ['/site/event']],
 
             ['label' => "<img src='".yii\helpers\Url::to(['@web/img/news.png'])."' style='width: 25px;'> ข่าวประกาศ", 'url' => ['/site/news']],
             ['label' => "<img src='".yii\helpers\Url::to(['@web/img/form.png'])."' style='width: 25px;'>  แบบประเมินผลออนไลน์", 'url' => ['/site/assessment-form'],'visible' => isset(\Yii::$app->session['user_id'])],
-            ['label' => isset($fullName) ? "Logout({$fullName})" : 'ข้อมูลส่วนตัว', 
-                'options'=>[
-                    'class'=>'menu-item wish-list'
-                ], 
-                'url' => ['/site/logout'], 
-                'visible' => isset(\Yii::$app->session['user_id']) , 
-                'active'=>($moduleID == 'user' && $controllerID == 'settings') ? true : false],
-                    
+            
+//            ['label' => isset($fullName) ? "Logout({$fullName})" : 'ข้อมูลส่วนตัว', 
+//                'options'=>[
+//                    'class'=>'menu-item wish-list'
+//                ], 
+//                'url' => ['/site/logout'], 
+//                'visible' => isset(\Yii::$app->session['user_id']) , 
+//                'active'=>($moduleID == 'user' && $controllerID == 'settings') ? true : false
+//            ],
+            [
+                'label' => 'ข้อมูลส่วนตัว',
+                'visible' => isset(\Yii::$app->session['user_id']) ? true : false,
+                'icon' => 'user',
+                'url' => '#',
+                'items' => [
+                    ['label' => "<img src='" . yii\helpers\Url::to(['@web/img/event.png']) . "' style='width: 25px;'> กิจกรรมการบรรยาย", 'url' => ['/site/event']],
+                ],
+            ],
             ['label' => 'สมัครใหม่', 'url' => ['/site/signup'], 'options'=>['class'=>'menu-item wish-list'] ,'active'=>($moduleID == 'user' && $actionID == 'register') ? true : false,'visible' => !isset(\Yii::$app->session['user_id'])],
             ['label' => 'เข้าสู่ระบบ', 'url' => ['/site/login'], 'options'=>['class'=>'menu-item wish-list'], 'active'=>($moduleID == 'user' && $actionID == 'login')?true:false,'visible' => !isset(\Yii::$app->session['user_id'])],
         ];

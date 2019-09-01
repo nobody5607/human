@@ -22,6 +22,8 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link href="<?= \yii\helpers\Url::to('@web/css/themes.css') ?>" rel="stylesheet">
+        <link href="<?= \yii\helpers\Url::to('@web/css/style.css') ?>" rel="stylesheet">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -47,14 +49,16 @@ AppAsset::register($this);
     } else {
 //        $menuItems[] = ['label' => 'ลงทะเบียนเข้าร่วมกิจกรรม', 'url' => ['/site/register-form']];
         $menuItems[] = ['label' => "<img src='".yii\helpers\Url::to(['@web/img/form.png'])."' style='width: 25px;'>  แบบประเมินผลออนไลน์", 'url' => ['/site/assessment-form']];
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . backend\classes\CNUser::get_fullname_by_user_id(\Yii::$app->session['user_id']). ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
+        $menuItems[] =  [
+                'label' => 'ข้อมูลส่วนตัว',
+                'visible' => isset(\Yii::$app->session['user_id']) ? true : false,
+                'icon' => 'user',
+                'url' => '#',
+                'items' => [
+                    ['label' => 'ข้อมูลส่วนตัว', 'url' => ['/site/event']],
+                    ['label' => 'ออกจากระบบ', 'url' => ['/site/event']],
+                ],
+        ];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
