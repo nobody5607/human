@@ -38,11 +38,11 @@ $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'
                                             <img src="<?= "{$url}/files/{$v->photo}"; ?>" class="img-thumbnail">
                                         </div> 
                                         <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <a href="<?= Url::to(["/site/news-detail?id={$v->id}"]) ?>">
                                             <div style="font-size:18px;color:#000000"> <?= "{$title}"; ?> </div> 
                                             <div style="font-size:12px;">โดย <span style="color:#1154af"><?= " {$userName}"; ?></span>  เผยเเพร่เมื่อ <span style="color:#1154af"><?= " {$date}"; ?></span></div> 
                                             <div style="font-size:14px;color:#000000"> <?= "{$sub_detail}"; ?> </div>  
-                                            <a href="<?= Url::to(["/site/news-detail?id={$v->id}"]) ?>">อ่านเพิ่มเติม</a>
-                                        </div> 
+                                        </div> </a>
                                      
 
                                 </div>
@@ -79,11 +79,12 @@ $url = isset(\Yii::$app->params['storageUrl']) ? \Yii::$app->params['storageUrl'
                                             <img src="<?= "{$url}/files/{$v->file}"; ?>" style="    border-radius: 3px; max-width: 75px;">
                                         </div>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <a href="<?= Url::to(["/site/event-detail?id={$v->id}"]) ?>">
                                             <div style="font-size:18px;color:#000000"> <?= "{$title}"; ?> </div> 
                                             <div style="font-size:12px;">โดย <span style="color:#1154af"><?= " {$userName}"; ?></span>  เผยเเพร่เมื่อ <span style="color:#1154af"><?= " {$date} {$renderTime}"; ?></span></div> 
                                             <div style="font-size:14px;color:#000000"> สถานที่จัดกิจกรรม <?= "{$location}"; ?> </div>  
-                                            <a href="<?= Url::to(["/site/event-detail?id={$v->id}"]) ?>">อ่านเพิ่มเติม</a>
-                                        </div>  
+                                        </div> 
+                                        </a> 
                                     <hr/>
                                     <div style="margin-bottom:14px"><hr/></div>
                                 </div>

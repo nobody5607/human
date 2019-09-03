@@ -216,8 +216,12 @@ public function actionEventDetail(){
     public function actionRegisterForm(){
         //register-form
         $user_id = \backend\classes\CNUser::get_user_id();
-        $model = \common\models\RegisterForm::find()->where(['user_id'=>$user_id])->one();
         $event_id = \Yii::$app->request->get('event_id', '');
+        $model = \common\models\RegisterForm::find()->where(['user_id'=>$user_id,'event_id'=>$event_id])->one();
+
+       
+        //var_dump($model);exit();
+        
         $status = true;
         if(!$model){
             $status = false;

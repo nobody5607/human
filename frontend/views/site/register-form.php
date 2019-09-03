@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
     <div>อีเมล์: <?= $model->email; ?></div>
     <div>วันที่ลงทะเบียน: <?= appxq\sdii\utils\SDdate::mysql2phpDate($model->create_date); ?></div>
 </div>
-<?php else:?>
+<?php else:?> 
 <div class="col-md-6 col-md-offset-3">
     <a href="<?= yii\helpers\Url::to(['/site/event-detail?id='.$model->event_id])?>" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i> </i> ย้อนกลับ</a>
 
